@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "12887d71-45dc-45f5-87d5-e99e3fe69a54": {
+      "ProjectGuid": "12887d71-45dc-45f5-87d5-e99e3fe69a54",
+      "DisplayName": "TrackingApp.Android",
+      "ColorIndex": 0
+    },
+    "02b57e34-a55a-42e2-8945-3c05b274bf83": {
+      "ProjectGuid": "02b57e34-a55a-42e2-8945-3c05b274bf83",
+      "DisplayName": "TrackingApp",
+      "ColorIndex": 1
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 2
+}

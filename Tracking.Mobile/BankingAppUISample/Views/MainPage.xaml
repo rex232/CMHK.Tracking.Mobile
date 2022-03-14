@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TrackingApp.Views;assembly=TrackingApp"
+             xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             android:TabbedPage.ToolbarPlacement="Bottom" 
+             x:Class="TrackingApp.Views.MainPage">
+    <TabbedPage.Children>
+        <NavigationPage x:Name="Home" Title="首頁" Icon="home.png">
+            <x:Arguments>
+                <local:BankingProfilePage />
+            </x:Arguments>
+        </NavigationPage >
+        <NavigationPage  x:Name="Inventory" Title="庫存" Icon="monitor4.png">
+            <x:Arguments>
+                <local:BankingProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage x:Name="Operation" Title="操作" Icon="loop.png">
+            <x:Arguments>
+                <local:BankingProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage x:Name="Test" Title="檢驗" Icon="doc_list.png">
+            <x:Arguments>
+                <local:BankingProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage x:Name="User" Title="我的" Icon="user.png">
+            <x:Arguments>
+                <local:BankingProfilePage />
+            </x:Arguments>
+        </NavigationPage>
+    </TabbedPage.Children>
+</TabbedPage>

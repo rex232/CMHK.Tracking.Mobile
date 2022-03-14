@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.ObjectModel;
-using BankingAppUISample.Models;
+using TrackingApp.Models;
 
-namespace BankingAppUISample.ViewModels
+namespace TrackingApp.ViewModels
 {
     public class BankingProfileViewModel
     {

@@ -1,5 +1,5 @@
 ﻿using System;
-namespace BankingAppUISample.Models
+namespace TrackingApp.Models
 {
     public class Cards
     {

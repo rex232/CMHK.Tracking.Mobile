@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace BankingAppUISample.iOS
+namespace TrackingApp.iOS
 {
     public class Application
     {

@@ -2,7 +2,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace BankingAppUISample
+namespace TrackingApp
 {
     public partial class App : Application
     {
@@ -10,7 +10,7 @@ namespace BankingAppUISample
         {
             InitializeComponent();
 
-            MainPage = new Views.BankingProfilePage();
+            MainPage = new Views.MainPage();
         }
 
         protected override void OnStart()

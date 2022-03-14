@@ -8,9 +8,9 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("BankingAppUISample.Views.BankingProfilePage.xaml", "Views/BankingProfilePage.xaml", typeof(global::BankingAppUISample.Views.BankingProfilePage))]
+[assembly: global::Xamarin.Forms.Xaml.XamlResourceIdAttribute("TrackingApp.Views.BankingProfilePage.xaml", "Views/BankingProfilePage.xaml", typeof(global::TrackingApp.Views.BankingProfilePage))]
 
-namespace BankingAppUISample.Views {
+namespace TrackingApp.Views {
     
     
     [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("Views\\BankingProfilePage.xaml")]

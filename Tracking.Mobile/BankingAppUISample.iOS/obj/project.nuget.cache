@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "T858F21wyJkaIrViUlwUQ+OrfeeZ2W2YH9Q6BVifUsCtgJ9MaCaBE8ucC4O9Xn74zdiAnYQweQNO+/XNRipJ4g==",
+  "dgSpecHash": "3Da6LnOriz8ONH3SAVGeOmgVnY/0hp6SviFad3tPIW5OhK5De095oDUUaZgBkIi8oEX0RDDr+/ZIfmRQurDssQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\CMLHKREX\\source\\repos\\CMHK.Tracking.Mobile\\Tracking.Mobile\\BankingAppUISample.iOS\\TrackingApp.iOS.csproj",
+  "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CMHK.Tracking.Mobile\\Tracking.Mobile\\BankingAppUISample.iOS\\TrackingApp.iOS.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\CMLHKREX\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
-    "C:\\Users\\CMLHKREX\\.nuget\\packages\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Users\\CMLHKREX\\.nuget\\packages\\xamarin.forms\\4.3.0.908675\\xamarin.forms.4.3.0.908675.nupkg.sha512"
+    "C:\\Users\\ASUS\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512"
   ],
   "logs": []
 }

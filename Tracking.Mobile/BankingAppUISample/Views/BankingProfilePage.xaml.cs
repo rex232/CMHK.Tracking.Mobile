@@ -3,13 +3,14 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-namespace BankingAppUISample.Views
+namespace TrackingApp.Views
 {
     public partial class BankingProfilePage : ContentPage
     {
         public BankingProfilePage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }
