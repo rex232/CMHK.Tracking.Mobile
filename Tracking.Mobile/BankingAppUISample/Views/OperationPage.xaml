@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="TrackingApp.Views.OperationPage">
+    <ContentPage.Content>
+        <!-- Main layout-->
+        <Grid RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="*,*" Padding="10,10,10,0" BackgroundColor="{ StaticResource ColorBackground}">
+
+            <!-- Main Label and message indicator:-->
+            <Label Grid.Row="0" Grid.ColumnSpan="2" Text="請選擇你的操作" FontAttributes="Bold" Margin="10,0,0,20" Style="{StaticResource LabelHuge}" />
+ 
+            <!-- 1.1 Operation Box -->
+            <Frame Grid.Row="1" Grid.ColumnSpan="2" BackgroundColor="White" HasShadow="False" Margin="10,0,10,20" CornerRadius="10" HeightRequest="170">
+                <Grid ColumnDefinitions="*,*" RowDefinitions="*,*">
+                    <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Horizontal">
+                        <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" Source="organize.png" Margin="13,0,0,0" HeightRequest="35"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="入庫操作" TextColor="#a4a5b0" VerticalOptions="Center" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.StockInCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <!-- Event name-->
+                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Horizontal">
+                        <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" Source="outbox.png" Margin="13,0,0,0" HeightRequest="35"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="出庫操作" TextColor="#a4a5b0" VerticalOptions="Center" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.StockOutCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                    <!--Time information-->
+                    <StackLayout Grid.Row="1" Grid.Column="0" Orientation="Horizontal">
+                        <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" Source="loop.png" Margin="13,0,0,0" HeightRequest="35"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="庫位轉移" TextColor="#a4a5b0" VerticalOptions="Center" />
+                    </StackLayout>
+                    <!--Location information-->
+                    <StackLayout Grid.Row="1" Grid.Column="1" Orientation="Horizontal">
+                        <Image Grid.Row="3" Grid.Column="0" HorizontalOptions="Start" Source="search1.png" Margin="13,0,0,0" HeightRequest="35"/>
+                        <Label Grid.Row="1" Grid.Column="1" Text="查詢貨單" TextColor="#a4a5b0" VerticalOptions="Center" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.OrderListCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
+                    </StackLayout>
+                </Grid>
+            </Frame>
+            
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

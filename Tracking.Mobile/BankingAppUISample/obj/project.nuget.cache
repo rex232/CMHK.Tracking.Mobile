@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "wfV0x1G7eMAq9LK6nH+1wkWUvq669ohF02A+qbTDhAJi+d5xsWlcrBMgXkESf3VZ8gdN1czsi2Az5B7JmVa6Fw==",
+  "dgSpecHash": "q4MXfeTqHzn7mHLmNGDYKtlPjizWitmJFMrxnOR+cVygmh6QhLEgPMbQL15O2MZCktHv9D5OfH6/fVqX+XHJrg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CMHK.Tracking.Mobile\\Tracking.Mobile\\BankingAppUISample\\TrackingApp.csproj",
   "expectedPackageFiles": [
@@ -8,7 +8,8 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
-    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512"
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512"
   ],
   "logs": []
 }

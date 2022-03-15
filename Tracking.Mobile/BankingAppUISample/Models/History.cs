@@ -1,7 +1,7 @@
 ﻿using System;
 namespace TrackingApp.Models
 {
-    public class History
+    public class HistoryModel
     {
         public string Picture { get; set; }
         public string Name    { get; set; }

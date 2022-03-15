@@ -1,0 +1,70 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:TrackingApp.Convertor"
+             x:Class="TrackingApp.Views.CheckReportPage">
+    <ContentPage.Resources>
+        <ResourceDictionary> 
+            <converters:TrueFalseConvertor x:Key="TFC"/> 
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <!-- Main layout-->
+        <Grid RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="*,*" Padding="10,10,10,0">
+
+            <!-- Main Label and message indicator:-->
+            <Label Grid.Row="0" Grid.Column="0" Text="檢查報告" FontAttributes="Bold" Margin="10,0,0,0" Style="{StaticResource LabelHuge}"/>
+            <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Source="add.png" Margin="13,0,10,0" HeightRequest="24" WidthRequest="24">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.CreateCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                </Image.GestureRecognizers>
+            </Image>
+            <SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" TextColor="#818181" PlaceholderColor="#818181" Placeholder="搜索" BackgroundColor="Transparent" Margin="0,10"/>
+
+            <!-- Message list-->
+            <CollectionView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Margin="0,0,0,0"
+                    HorizontalOptions="FillAndExpand"
+                    VerticalScrollBarVisibility="Never"
+                    BackgroundColor="{ StaticResource ColorBackground}"
+                    ItemsSource="{Binding checkReportList}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="Auto,Auto,Auto,Auto" Padding="10">
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding OrderNumber}" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Title}" FontAttributes="Bold" TextColor="#b4b4b4"/>
+                            <Ellipse Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" IsVisible="{Binding IsComplete}" VerticalOptions="Center" HorizontalOptions="Start" Fill="#1ad32e" HeightRequest="10" WidthRequest="10" StrokeThickness="0"/>
+                            <Ellipse Grid.Row="0" Grid.Column="2" Grid.RowSpan="2" IsVisible="{Binding IsComplete,Converter={StaticResource TFC}}" VerticalOptions="Center" HorizontalOptions="Start" Fill="red" HeightRequest="10" WidthRequest="10" StrokeThickness="0"/>
+                            <StackLayout Grid.Row="2" Grid.ColumnSpan="3" BackgroundColor="White" HeightRequest="200">
+                                <Grid ColumnDefinitions="*,*,*" RowDefinitions="*,*" Padding="10">
+                                    <Frame Grid.Row="0" Grid.Column="0" BorderColor="{StaticResource ColorPrimary}" HorizontalOptions="Start" VerticalOptions="Start" HasShadow="False" CornerRadius="10" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="{Binding Pic1}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="1" BorderColor="{StaticResource ColorPrimary}" HorizontalOptions="Start" VerticalOptions="Start" HasShadow="False" CornerRadius="10" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="{Binding Pic2}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Frame>
+                                    <Frame Grid.Row="0" Grid.Column="2" BorderColor="{StaticResource ColorPrimary}" HorizontalOptions="Start" VerticalOptions="Start" HasShadow="False" CornerRadius="10" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="{Binding Pic3}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="0" BorderColor="{StaticResource ColorPrimary}" HorizontalOptions="Start" VerticalOptions="Start" HasShadow="False" CornerRadius="10" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="{Binding Pic4}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="1" BorderColor="{StaticResource ColorPrimary}" HorizontalOptions="Start" VerticalOptions="Center" HasShadow="False" CornerRadius="10" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="{Binding Pic5}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Frame>
+                                    <Frame Grid.Row="1" Grid.Column="2" BorderColor="{StaticResource ColorPrimary}" HorizontalOptions="Start" VerticalOptions="Center" HasShadow="False" CornerRadius="10" Padding="0" IsClippedToBounds="True">
+                                        <Image Source="{Binding Pic6}" Aspect="AspectFill" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand"/>
+                                    </Frame>
+                                </Grid>
+                                <Label Text="..." HorizontalOptions="End" Padding="0,0,10,10" Style="{StaticResource LabelHuge}" />
+                            </StackLayout>
+
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

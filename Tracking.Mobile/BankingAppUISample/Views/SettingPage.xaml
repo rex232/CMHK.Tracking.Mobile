@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.PrefersStatusBarHidden="True"
+             ios:Page.PreferredStatusBarUpdateAnimation="Fade"
+            x:Class="TrackingApp.Views.SettingPage">
+
+    <ScrollView VerticalScrollBarVisibility="Never">
+        <Grid RowDefinitions="Auto,Auto,Auto,*" BackgroundColor="{ StaticResource ColorBackground}">
+            <!-- 1. Main structure-->
+            <StackLayout Grid.Row="0"  HeightRequest="160" BackgroundColor="{ StaticResource ColorPrimary}">
+                <Image Grid.Row="0" Source="logo.png" VerticalOptions="Start" Aspect="AspectFill" Margin="0,30,0,0"/>
+            </StackLayout>
+            
+            <!-- 1.1 Heart -->
+            <Image Grid.Row="0" Source="_Heart" Margin="0,35,20,0" HeightRequest="35" WidthRequest="35" HorizontalOptions="End" VerticalOptions="Start"/>
+
+            <!-- 2. Event Description -->
+
+            <!-- 2.1 Fashion Fair frame 2020-->
+            <Frame Grid.Row="1" BackgroundColor="White" HasShadow="False" Margin="15,-50,15,10" CornerRadius="20" HeightRequest="50">
+                <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto">
+                    <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image HorizontalOptions="Start" Source="user.png" Margin="0,0,0,0" HeightRequest="24" WidthRequest="24" />
+                        <Label Text="用戶" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image HorizontalOptions="Center" Source="cloud_black_upload2.png" Margin="0,0,0,0" HeightRequest="24" WidthRequest="24" />
+                        <Label  Text="資料同步" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                    </StackLayout>
+                    <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
+                        <Image HorizontalOptions="Start" Source="settings8.png" Margin="0,0,0,0" HeightRequest="24" WidthRequest="24" />
+                        <Label Text="設定" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                    </StackLayout>
+                </Grid>
+            </Frame>
+
+            <ListView Grid.Row="2"  x:Name="ItemsListView" BackgroundColor="{ StaticResource ColorBackground}"
+                              CachingStrategy="RecycleElement"
+                              IsPullToRefreshEnabled="false"
+                              ItemsSource="{Binding menuList}"
+                              SelectionMode="None"
+                              >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HeightRequest="120" MinimumHeightRequest="120" Margin="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="6*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                    <Image Grid.Row="0" Grid.Column="0" Source="{Binding Picture}"
+                                            BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
+          
+                                    </Image>
+                                    <Label Grid.Row="0" Grid.Column="1" Text="{Binding MenuName}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"
+                                             LineBreakMode="NoWrap" Style="{StaticResource LabelSmall}" >
+                                    </Label>
+                                    <Label Grid.Row="0" Grid.Column="2" Text=">" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"  LineBreakMode="NoWrap" FontSize="20" Padding="0,0,0,0" >
+                                    </Label> 
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}"
+                                              NumberOfTapsRequired="1" />
+                                    </Grid.GestureRecognizers>
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:TrackingApp.ViewModels;assembly=TrackingApp"
+             x:Class="TrackingApp.Views.LandingPage">
+    <ContentPage.BindingContext>
+        <local:LandingViewModel />
+    </ContentPage.BindingContext>
+
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout BackgroundColor="#fbfaff">
+
+                <!-- 1. Profile Picture-->
+                 <Grid>
+                     <Grid.RowDefinitions>
+                         <RowDefinition Height="300"/>
+                     </Grid.RowDefinitions>
+                     <Image Grid.Row="0" Source="SusanneRoll2" VerticalOptions="Start" Aspect="AspectFill" Margin="0,-45,0,0"/>
+                     <Label Grid.Row="0" VerticalOptions="End" Padding="20,20,20,50">
+                       <Label.FormattedText>
+                            <FormattedString>
+                               <Span Text="Rex Yeung &#10;" FontSize="25" FontAttributes="Bold" ForegroundColor="White" />
+                               <Span Text="ID 1234567" FontSize="17" ForegroundColor="White" />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label> 
+                 </Grid>
+
+                <!-- 2. Contact information frame--> 
+               <Frame CornerRadius="20" Margin="0,-50,0,0" BackgroundColor="#fbfaff" HasShadow="False" HeightRequest="19"/>
+
+                <!-- It will contain blocks: 3, 4 and 5 --> 
+                    <Grid Margin="30,-20,30,10">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/> 
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                             <RowDefinition Height="Auto"/>
+                             <RowDefinition Height="Auto"/>
+                             <RowDefinition Height="Auto"/>
+                             <RowDefinition Height="210"/>
+                             <RowDefinition Height="Auto"/>
+                             <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+
+                        <!-- 4. Cards-->
+                        <Label Grid.Row="0" Grid.Column="0" Text="最新派送情況" TextColor="Silver" Margin="0,0,0,0"/>
+                        <CollectionView Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"              
+                                    ItemsSource="{Binding cards}"
+                                    VerticalOptions="Start"  
+                                    ItemsLayout="HorizontalList">
+                                    <CollectionView.ItemTemplate>
+                                        <DataTemplate>
+                                            <StackLayout WidthRequest="320">
+                                                <Image Source="{Binding CardImage}" Margin="0,0,15,0"/> 
+                                            </StackLayout>
+                                       </DataTemplate>
+                                    </CollectionView.ItemTemplate>
+                        </CollectionView>
+                   
+                     <!-- 5. History-->
+                    <Label Grid.Row="4" Grid.Column="0" Text="最新運單" TextColor="Silver" Margin="0,10,0,0"/>
+                    <Image Grid.Row="4" Grid.Column="1" Source="Refresh" HorizontalOptions="End" WidthRequest="20"/>
+                     <CollectionView Grid.Row="5"
+                            Margin="0,23,0,0"
+                            Grid.ColumnSpan="2"
+                            BackgroundColor="#fbfaff"
+                            ItemsSource="{Binding orderList}"
+                            VerticalOptions="Center"
+                            HeightRequest="240">
+                            <CollectionView.ItemTemplate> 
+                               <DataTemplate> 
+                                    <Grid BackgroundColor="White">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" /> 
+                                        </Grid.RowDefinitions> 
+                                       <Grid.ColumnDefinitions>
+                                           <ColumnDefinition Width="Auto"/>
+                                           <ColumnDefinition Width="Auto"/>
+                                           <ColumnDefinition Width="*"/>
+                                       </Grid.ColumnDefinitions>
+                                       <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Picture}"  HorizontalOptions="Start" HeightRequest="36" WidthRequest="36" Margin="20,10,20,20" />
+                                       <Label Grid.Column="1" Grid.Row="0" Text="{Binding OrderNumber}" Padding="20,0,0,0" HorizontalOptions="Center" VerticalOptions="Center"  />
+                                       <Label Grid.Column="1" Grid.Row="1" Text="{Binding OrderSupplierName}" Padding="20,0,0,0" HorizontalOptions="Start" VerticalOptions="Start" TextColor="{ StaticResource ColorPrimary }" FontAttributes="Bold"/>
+                                       <Label Grid.Column="2" Grid.Row="0" Text="{Binding OrderDate}" HorizontalOptions="End"/>
+                                       <Label Grid.Column="2" Grid.Row="1" Text="" HorizontalOptions="End" TextColor="Silver"/> 
+                                    </Grid> 
+                                </DataTemplate>
+                                 </CollectionView.ItemTemplate>
+                     </CollectionView>
+                </Grid> 
+                 
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

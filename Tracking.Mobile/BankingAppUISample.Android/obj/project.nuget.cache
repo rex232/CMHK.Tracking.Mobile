@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "tbOdlUFdD6y+rNXHO2+D2dpF4i8+v8iZjxAUtBK/b1t4fMMAsPNuQqhAqYIezn0kCewuoPeznn5uY5iZPmeaZg==",
+  "dgSpecHash": "gkCO49obR+FFYXmU/AzxcNjS4YvjgKP3El1kDPR69CLgzz6EsMCMsPLXl4p/g7qnBFSqKjzQamCN0Elj4UP0Gg==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CMHK.Tracking.Mobile\\Tracking.Mobile\\BankingAppUISample.Android\\TrackingApp.Android.csproj",
   "expectedPackageFiles": [
@@ -60,6 +60,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.forms\\5.0.0.2337\\xamarin.forms.5.0.0.2337.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.forms.datagrid\\4.8.0\\xamarin.forms.datagrid.4.8.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.google.android.material\\1.4.0.2\\xamarin.google.android.material.1.4.0.2.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.google.guava.listenablefuture\\1.0.0.2\\xamarin.google.guava.listenablefuture.1.0.0.2.nupkg.sha512"
   ],
