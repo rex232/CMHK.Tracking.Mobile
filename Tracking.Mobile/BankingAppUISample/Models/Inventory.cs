@@ -6,6 +6,7 @@ namespace TrackingApp.Models
     public class InventoryModel
     {
         public string Picture { get; set; }
+        public string RefNo { get; set; }
         public string Name { get; set; } 
         public bool IsOnline { get; set; }
         public string Detail { get; set; }
@@ -71,9 +72,11 @@ namespace TrackingApp.Models
 
 
     }
+   
     public class ProductModel_request : Base_request
     {
         public long product_id { get; set; }
+        public Product_data data { get; set; }
     }
 
     public class ProductModel_result : Base_result

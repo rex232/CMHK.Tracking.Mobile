@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:ffimageloading="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
              x:Class="TrackingApp.Views.InventoryPage"> 
         <ContentPage.Content>
             <!-- Main layout-->
@@ -21,7 +22,13 @@
                         <DataTemplate>
                             <Grid ColumnDefinitions="Auto,*,Auto" RowDefinitions="20,20,20,Auto,1" Padding="10">
                                 <Frame Grid.Row="0" Grid.RowSpan="3" Grid.Column="0" BorderColor="Transparent" HorizontalOptions="Start" VerticalOptions="Center" HasShadow="False" CornerRadius="17" Padding="0" IsClippedToBounds="True" Margin="0,0,20,0">
-                                    <Image Source="{Binding Picture}" Aspect="AspectFill" WidthRequest="70" HeightRequest="70"/>
+ 
+                                    <ffimageloading:CachedImage
+                                               Source="{Binding Picture}"  
+                                               HeightRequest="70"
+                                               WidthRequest="70"
+                                               DownsampleWidth="70"
+                                               Aspect="AspectFill" />
                                 </Frame>
                                 <Label Grid.Row="0" Grid.Column="1" Text="{Binding Name}" FontAttributes="Bold"/>
                                  <Label Grid.Row="1" Grid.Column="1" TextColor="#6c6c6c"  >

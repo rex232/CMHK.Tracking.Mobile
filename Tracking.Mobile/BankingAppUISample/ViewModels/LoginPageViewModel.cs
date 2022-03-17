@@ -1,8 +1,10 @@
 ﻿
 using AiForms.Dialogs;
 using System;
+using TrackingApp.APIService;
 using TrackingApp.Controls;
 using TrackingApp.Helper;
+using TrackingApp.Models;
 using Xamarin.Essentials;
 using Xamarin.Forms;
 
@@ -54,64 +56,61 @@ namespace TrackingApp.ViewModels
 
             GlobalVariable.Access_level = 0;
 
-            if (_loginname.ToLower() == "admin" && _password.ToLower() == "123456")
-            {
-                Preferences.Set("session_login", _loginname);
-                GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
-                GlobalVariable.Access_level = 3;
-            }
+            Auth_data _data = new Auth_data();
+            _data.username = _loginname;
+            _data.password = _password;
 
-            if (_loginname.ToLower() == "staff01" && _password.ToLower() == "123456")
-            {
-                Preferences.Set("session_login", _loginname);
-                GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
-                GlobalVariable.Access_level = 2;
-            }
+            Auth_result _rtn = await MainApiService.Instance.User.Login(_data);
 
-            if (_loginname.ToLower() == "client" && _password.ToLower() == "123456")
-            {
-                Preferences.Set("session_login", _loginname.ToLower());
-                GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
-                GlobalVariable.Access_level = 1;
-            }
-
-            if (GlobalVariable.Access_level == 0)
+            if (_rtn == null)
             {
                 Toast.Instance.Show<QAToastView>(new { Title = "無效的用戶信息", Duration = 2500 });
                 return;
             }
 
-            //auth_data _data = new auth_data();
-            //_data.username = _loginname;
-            //_data.password = _password;
+            if (_rtn.success == GlobalSetting.API_result.Yes)
+            {
+                //Login Success
+                if (_loginname.ToLower() == "admin")
+                {
+                    Preferences.Set("session_login", _loginname);
+                    GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
+                    GlobalVariable.Access_level = 3;
+                }
 
-            //auth_result _rtn = await MainApiService.Instance.User.Login(_data);
+                if (_loginname.ToLower() == "staff01")
+                {
+                    Preferences.Set("session_login", _loginname);
+                    GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
+                    GlobalVariable.Access_level = 2;
+                }
 
-            //if (_rtn == null)
-            //{
+                if (_loginname.ToLower() == "client")
+                {
+                    Preferences.Set("session_login", _loginname.ToLower());
+                    GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
+                    GlobalVariable.Access_level = 1;
+                }
 
-            //}
-
-            //if (_rtn.success == GlobalSetting.API_result.Yes)
-            //{
-            //    //Login Success
-            //    MessagingCenter.Send<LoginPageViewModel>(this, "LOGIN_SUCCESS");
-
-            //    //Close Form
-            //    await _navigation.PopAsync();
-
-
-            //}
-            //else
-            //{
-
-            //    //Login Failed
-            //}
-            //Close Form
-
+                //Close Form
+                await _navigation.PopModalAsync();
 
 
-            await _navigation.PopModalAsync();
+            }
+            else
+            {
+                Toast.Instance.Show<QAToastView>(new { Title = "無效的用戶信息", Duration = 2500 });
+                _password = "";
+                NotifyPropertyChanged(nameof(Password));
+
+                return;
+                //Login Failed
+            }
+ 
+
+
+
+
 
         }
 
