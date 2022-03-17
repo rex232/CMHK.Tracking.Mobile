@@ -13,6 +13,7 @@ namespace TrackingApp.ViewModels
         private INavigation _navigation;
 
         public ObservableCollection<MenuModel> menuList { get; set; }
+        public ObservableCollection<OrderModel> orderList { get; set; }
 
         public Command BackCommand { get; private set; }
 
@@ -30,6 +31,56 @@ namespace TrackingApp.ViewModels
                 new MenuModel { Picture = "organize", MenuName = "IB00004", MenuData= "03/06/2022"  }
             };
 
+            orderList = new ObservableCollection<OrderModel>
+            {
+
+                new OrderModel
+                {
+                    Picture="organize",
+                    OrderType="入庫",
+                    OrderSupplierName="招商船企",
+                    OrderNumber="IB00001",
+                    OrderDate="03/11/2022",
+                    OrderStatus="己完成"
+                },
+                new OrderModel
+                {
+                    Picture="organize",
+                    OrderType="入庫",
+                    OrderSupplierName="招商船企",
+                    OrderNumber="IB00002",
+                    OrderDate="03/12/2022",
+                      OrderStatus="己完成"
+
+                },
+                new OrderModel
+                {
+                    Picture="organize",
+                    OrderType="入庫",
+                    OrderSupplierName="招商船企",
+                    OrderNumber="IB00003",
+                    OrderDate="03/12/2022",
+                      OrderStatus="己完成"
+                },
+                new OrderModel
+                {
+                    Picture="organize",
+                    OrderType="入庫",
+                    OrderSupplierName="招商船企",
+                    OrderNumber="IB00004",
+                    OrderDate="03/12/2022",
+                     OrderStatus="己完成"
+                },
+                new OrderModel
+                {
+                    Picture="organize",
+                    OrderType="入庫",
+                    OrderSupplierName="招商船企",
+                    OrderNumber="IB00005",
+                    OrderDate="03/13/2022",
+                    OrderStatus="揀貨中"
+                }
+            };
 
 
             BackCommand = new Command

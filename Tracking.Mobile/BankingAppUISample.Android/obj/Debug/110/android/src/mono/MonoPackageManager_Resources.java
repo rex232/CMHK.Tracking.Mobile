@@ -3,7 +3,14 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "TrackingApp.Droid.dll" comes first in this list. */
 		"TrackingApp.Droid.dll",
+		"AiForms.Dialogs.dll",
+		"FFImageLoading.dll",
+		"FFImageLoading.Forms.dll",
+		"FFImageLoading.Forms.Platform.dll",
+		"FFImageLoading.Platform.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.dll",
+		"Polly.dll",
 		"TrackingApp.dll",
 		"Xamarin.AndroidX.Activity.dll",
 		"Xamarin.AndroidX.Annotation.dll",

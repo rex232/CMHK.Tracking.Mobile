@@ -39,9 +39,17 @@
       "frameworks": {
         "monoandroid11.0": {
           "dependencies": {
+            "AiForms.Dialogs": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.1, )"
+            },
+            "Xamarin.FFImageLoading": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",
@@ -88,15 +96,31 @@
         "netstandard2.0": {
           "targetAlias": "netstandard2.0",
           "dependencies": {
+            "AiForms.Dialogs": {
+              "target": "Package",
+              "version": "[1.0.14, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
             },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.1, )"
+            },
+            "Polly": {
+              "target": "Package",
+              "version": "[7.2.3, )"
+            },
             "Xamarin.Essentials": {
               "target": "Package",
               "version": "[1.7.1, )"
+            },
+            "Xamarin.FFImageLoading.Forms": {
+              "target": "Package",
+              "version": "[2.4.11.982, )"
             },
             "Xamarin.Forms": {
               "target": "Package",

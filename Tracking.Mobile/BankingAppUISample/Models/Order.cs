@@ -7,7 +7,8 @@ namespace TrackingApp.Models
         public string OrderType             { get; set; }
         public string OrderSupplierName     { get; set; }
         public string OrderNumber           { get; set; }    
-        public string OrderDate             { get; set; } 
+        public string OrderDate             { get; set; }
+        public string OrderStatus           { get; set; }
     }
 
     public class CheckingReportModel

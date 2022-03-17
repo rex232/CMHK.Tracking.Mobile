@@ -1,5 +1,7 @@
-﻿using System;
+﻿using AiForms.Dialogs;
+using System;
 using System.Collections.ObjectModel;
+using TrackingApp.Controls;
 using TrackingApp.Helper;
 using TrackingApp.Models;
 using TrackingApp.Views;
@@ -23,26 +25,47 @@ namespace TrackingApp.ViewModels
 
             StockInCommand = new Command
             (t =>
-            {  
-                Device.BeginInvokeOnMainThread(() => {
-                    _navigation.PushModalAsync(NavigationPageHelper.Create(new OrderListPage()), false);
-                });
+            {
+                if (GlobalVariable.Access_level >= 2)
+                {
+                    Device.BeginInvokeOnMainThread(() =>
+                    {
+                        _navigation.PushModalAsync(NavigationPageHelper.Create(new OrderListPage()), false);
+                    });
+                } else
+                {
+                    Toast.Instance.Show<QAToastView>(new { Title = "抱歉，您沒有訪問權限", Duration = 2500 });
+                    return;
+                }
             });
 
             StockOutCommand = new Command
             (t =>
-            {  
-                Device.BeginInvokeOnMainThread(() => {
+            {
+                if (GlobalVariable.Access_level >= 2) { 
+                    Device.BeginInvokeOnMainThread(() => {
                     _navigation.PushModalAsync(NavigationPageHelper.Create(new OrderListPage()), false);
-                });
-            });
+                    });
+                } else
+                {
+                    Toast.Instance.Show<QAToastView>(new { Title = "抱歉，您沒有訪問權限", Duration = 2500 });
+                    return;
+                }
+        });
 
             OrderListCommand = new Command
             (t =>
-            {  
-                Device.BeginInvokeOnMainThread(() => {
+            {
+                if (GlobalVariable.Access_level >= 2) { 
+                    Device.BeginInvokeOnMainThread(() => {
                     _navigation.PushModalAsync(NavigationPageHelper.Create(new OrderListPage()), false);
-                });
+                    });
+                }
+                else
+                {
+                    Toast.Instance.Show<QAToastView>(new { Title = "抱歉，您沒有訪問權限", Duration = 2500 });
+                    return;
+                }
             });
 
         }

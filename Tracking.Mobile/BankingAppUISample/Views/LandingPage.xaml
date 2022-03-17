@@ -20,8 +20,8 @@
                      <Label Grid.Row="0" VerticalOptions="End" Padding="20,20,20,50">
                        <Label.FormattedText>
                             <FormattedString>
-                               <Span Text="Rex Yeung &#10;" FontSize="25" FontAttributes="Bold" ForegroundColor="White" />
-                               <Span Text="ID 1234567" FontSize="17" ForegroundColor="White" />
+                               <Span Text="工作人員 &#10;" FontSize="25" FontAttributes="Bold" ForegroundColor="White" />
+                               <Span Text="編號 1234567" FontSize="17" ForegroundColor="White" />
                             </FormattedString>
                         </Label.FormattedText>
                     </Label> 

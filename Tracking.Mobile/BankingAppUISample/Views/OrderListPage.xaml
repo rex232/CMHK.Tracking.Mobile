@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:system="clr-namespace:System;assembly=netstandard"
              x:Class="TrackingApp.Views.OrderListPage">
     <ContentPage.Content>
         <!-- Main layout-->
@@ -23,7 +24,7 @@
             <ListView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" x:Name="ItemsListView" BackgroundColor="{ StaticResource ColorBackground}"
                               CachingStrategy="RecycleElement"
                               IsPullToRefreshEnabled="false"
-                              ItemsSource="{Binding menuList}"
+                              ItemsSource="{Binding orderList}"
                               SelectionMode="None"
                               >
                 <ListView.ItemTemplate>
@@ -43,11 +44,16 @@
                                             BackgroundColor="Transparent" WidthRequest="24" HeightRequest="24" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
 
                                 </Image>
-                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding MenuName}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"
-                                             LineBreakMode="NoWrap" Style="{StaticResource LabelSmall}" >
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding OrderNumber}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand" LineBreakMode="NoWrap" Style="{StaticResource LabelSmall}" >
+                                    <Label.FormattedText>
+                                        <FormattedString>
+                                            <Span TextColor="Green" Text="{Binding OrderNumber}"  />
+                                            <Span Text="{x:Static system:Environment.NewLine}"/>
+                                            <Span TextColor="Red" Text="{Binding OrderStatus}"  />
+                                        </FormattedString>
+                                    </Label.FormattedText>
                                 </Label>
-                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding MenuData}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"
-                                             LineBreakMode="NoWrap" Style="{StaticResource LabelSmall}" >
+                                <Label Grid.Row="0" Grid.Column="2" Text="{Binding OrderDate}" HorizontalTextAlignment="End" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand" LineBreakMode="NoWrap" Style="{StaticResource LabelSmall}" >
                                 </Label>
                                 <Label Grid.Row="0" Grid.Column="3" Text=">" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"  LineBreakMode="NoWrap" FontSize="20" Padding="0,0,0,0" >
                                 </Label>
