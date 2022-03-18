@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using TrackingApp.APIService;
 using TrackingApp.Helper;
 using TrackingApp.Models;
 using TrackingApp.Views;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 
 namespace TrackingApp.ViewModels
@@ -13,7 +15,7 @@ namespace TrackingApp.ViewModels
         private INavigation _navigation;
 
         public ObservableCollection<MenuModel> menuList { get; set; }
-        public ObservableCollection<OrderModel> orderList { get; set; }
+        public ObservableCollection<OrderDetailModel> orderList { get; set; }
 
         public Command BackCommand { get; private set; }
 
@@ -31,57 +33,39 @@ namespace TrackingApp.ViewModels
                 new MenuModel { Picture = "organize", MenuName = "IB00004", MenuData= "03/06/2022"  }
             };
 
-            orderList = new ObservableCollection<OrderModel>
+            orderList = new ObservableCollection<OrderDetailModel>();
+
+            //Get order data
+            MainThread.BeginInvokeOnMainThread(async () =>
             {
+                TransactionPage_data data = new TransactionPage_data();
+                TransactionPageModel_result _rtn = await MainApiService.Instance.Transaction.Latest(data);
 
-                new OrderModel
+                if (_rtn.success)
                 {
-                    Picture="organize",
-                    OrderType="入庫",
-                    OrderSupplierName="招商船企",
-                    OrderNumber="IB00001",
-                    OrderDate="03/11/2022",
-                    OrderStatus="己完成"
-                },
-                new OrderModel
-                {
-                    Picture="organize",
-                    OrderType="入庫",
-                    OrderSupplierName="招商船企",
-                    OrderNumber="IB00002",
-                    OrderDate="03/12/2022",
-                      OrderStatus="己完成"
+                    if (_rtn.data == null)
+                        return;
 
-                },
-                new OrderModel
-                {
-                    Picture="organize",
-                    OrderType="入庫",
-                    OrderSupplierName="招商船企",
-                    OrderNumber="IB00003",
-                    OrderDate="03/12/2022",
-                      OrderStatus="己完成"
-                },
-                new OrderModel
-                {
-                    Picture="organize",
-                    OrderType="入庫",
-                    OrderSupplierName="招商船企",
-                    OrderNumber="IB00004",
-                    OrderDate="03/12/2022",
-                     OrderStatus="己完成"
-                },
-                new OrderModel
-                {
-                    Picture="organize",
-                    OrderType="入庫",
-                    OrderSupplierName="招商船企",
-                    OrderNumber="IB00005",
-                    OrderDate="03/13/2022",
-                    OrderStatus="揀貨中"
+                    foreach (TransactionPage_data item in _rtn.data)
+                    {
+                        OrderDetailModel _tmp = new OrderDetailModel();
+                        // _tmp.Picture = $"{ GlobalSetting.CURRENT_BASE}{ item.image_path}";
+                        _tmp.OrderType = item.order_type;
+                        _tmp.OrderSupplierName = item.supplier_id;
+                        //  _tmp.OrderInfo = item.description;
+                        _tmp.OrderNumber = item.order_no;
+                        _tmp.OrderDate = item.working_date;
+                        _tmp.OrderStatus = item.transaction_status;
+                        _tmp.BoxQty = item.qty_box;
+                        _tmp.Qty = item.qty;
+                        _tmp.Picture = (_tmp.OrderType == "入庫") ? "organize" : "outbox";
+                        orderList.Add(_tmp);
+                    }
                 }
-            };
 
+            });
+
+ 
 
             BackCommand = new Command
             (t =>

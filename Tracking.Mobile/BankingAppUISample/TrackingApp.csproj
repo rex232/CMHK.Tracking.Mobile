@@ -26,6 +26,12 @@
     <Compile Update="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\StockOutOrderListPage.xaml.cs">
+      <DependentUpon>StockOutOrderListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\StockInOrderListPage.xaml.cs">
+      <DependentUpon>StockInOrderListPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\OrderListPage.xaml.cs">
       <DependentUpon>OrderListPage.xaml</DependentUpon>
     </Compile>

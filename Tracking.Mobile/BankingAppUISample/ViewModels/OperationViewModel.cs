@@ -30,7 +30,7 @@ namespace TrackingApp.ViewModels
                 {
                     Device.BeginInvokeOnMainThread(() =>
                     {
-                        _navigation.PushModalAsync(NavigationPageHelper.Create(new OrderListPage()), false);
+                        _navigation.PushModalAsync(NavigationPageHelper.Create(new StockInOrderListPage()), false);
                     });
                 } else
                 {
@@ -44,7 +44,7 @@ namespace TrackingApp.ViewModels
             {
                 if (GlobalVariable.Access_level >= 2) { 
                     Device.BeginInvokeOnMainThread(() => {
-                    _navigation.PushModalAsync(NavigationPageHelper.Create(new OrderListPage()), false);
+                    _navigation.PushModalAsync(NavigationPageHelper.Create(new StockOutOrderListPage()), false);
                     });
                 } else
                 {

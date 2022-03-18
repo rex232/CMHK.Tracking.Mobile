@@ -38,3 +38,5 @@ C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISamp
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.pdb
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\ref\TrackingApp.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Controls\QAToastView.xaml.g.cs
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Views\StockInOrderListPage.xaml.g.cs
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Views\StockOutOrderListPage.xaml.g.cs

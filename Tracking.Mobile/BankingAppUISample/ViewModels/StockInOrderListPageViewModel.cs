@@ -3,55 +3,43 @@ using System.Collections.ObjectModel;
 using TrackingApp.APIService;
 using TrackingApp.Helper;
 using TrackingApp.Models;
+using TrackingApp.Views;
 using Xamarin.Essentials;
-using System.Linq;
+using Xamarin.Forms;
 
 namespace TrackingApp.ViewModels
 {
-    public class LandingViewModel
+    public class StockInOrderListPageViewModel
     {
-        public ObservableCollection<Cards> cards { get; set; }
+
+        private INavigation _navigation;
+
+        public ObservableCollection<MenuModel> menuList { get; set; }
         public ObservableCollection<OrderDetailModel> orderList { get; set; }
 
-        public LandingViewModel()
+        public Command BackCommand { get; private set; }
+
+        public StockInOrderListPageViewModel(INavigation navitation)
         {
-            cards = new ObservableCollection<Cards>
+            _navigation = navitation;
+
+
+
+            menuList = new ObservableCollection<MenuModel>()
             {
-                new Cards
-                {
-                    CardImage="pic1",
-                    CardBussinessCategory ="BUSINESS CARD",
-                    CardNumber="4565",
-                    CardType="Mastercard",
-                    CardExpirationDate="05/20"
-                },
-                new Cards
-                {
-                    CardImage="pic2",
-                    CardBussinessCategory ="PERSONAL CARD",
-                    CardNumber="5664",
-                    CardType="VISA",
-                    CardExpirationDate="04/21"
-                },
-                new Cards
-                {
-                    CardImage="pic3",
-                    CardBussinessCategory ="BUSINESS CARD",
-                    CardNumber="4445",
-                    CardType="Mastercard",
-                    CardExpirationDate="05/22"
-                }
+                new MenuModel { Picture = "organize", MenuName = "IB00001", MenuData= "03/01/2022" },
+                new MenuModel { Picture = "organize", MenuName = "IB00002", MenuData= "03/03/2022"  },
+                new MenuModel { Picture = "organize", MenuName = "IB00003", MenuData= "03/04/2022"  },
+                new MenuModel { Picture = "organize", MenuName = "IB00004", MenuData= "03/06/2022"  }
             };
 
             orderList = new ObservableCollection<OrderDetailModel>();
-
-
 
             //Get order data
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 TransactionPage_data data = new TransactionPage_data();
-                TransactionPageModel_result _rtn = await MainApiService.Instance.Transaction.Latest(data);
+                TransactionPageModel_result _rtn = await MainApiService.Instance.Transaction.StockInListing(data);
 
                 if (_rtn.success)
                 {
@@ -61,10 +49,10 @@ namespace TrackingApp.ViewModels
                     foreach (TransactionPage_data item in _rtn.data)
                     {
                         OrderDetailModel _tmp = new OrderDetailModel();
-                       // _tmp.Picture = $"{ GlobalSetting.CURRENT_BASE}{ item.image_path}";
+                        // _tmp.Picture = $"{ GlobalSetting.CURRENT_BASE}{ item.image_path}";
                         _tmp.OrderType = item.order_type;
                         _tmp.OrderSupplierName = item.supplier_id;
-                      //  _tmp.OrderInfo = item.description;
+                        //  _tmp.OrderInfo = item.description;
                         _tmp.OrderNumber = item.order_no;
                         _tmp.OrderDate = item.working_date;
                         _tmp.OrderStatus = item.transaction_status;
@@ -77,6 +65,17 @@ namespace TrackingApp.ViewModels
 
             });
 
+ 
+
+            BackCommand = new Command
+            (t =>
+            {
+           
+                // Navigation.Push
+                Device.BeginInvokeOnMainThread(() => {
+                    _navigation.PopModalAsync(false);
+                });
+            });
 
 
         }

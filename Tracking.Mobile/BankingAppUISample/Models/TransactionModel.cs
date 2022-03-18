@@ -37,6 +37,7 @@ namespace TrackingApp.Models
     public class TransactionPageModel_request : Base_request
     {
         public long id { get; set; }
+        public TransactionPage_data data { get; set; }
     }
 
     public class TransactionPageModel_result : Base_result

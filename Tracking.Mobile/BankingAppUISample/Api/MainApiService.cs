@@ -10,11 +10,13 @@ namespace TrackingApp.APIService
         static MainApiService _instance;
         public UserApiService User;
         public InventoryApiService Inventory;
+        public TransactionApiService Transaction;
 
         public MainApiService()
         {
             User = new UserApiService();
             Inventory = new InventoryApiService();
+            Transaction = new TransactionApiService();
         }
 
         public static MainApiService Instance

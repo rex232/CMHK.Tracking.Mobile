@@ -28,6 +28,7 @@ namespace TrackingApp.ViewModels
 
             //};
 
+            //Get inventory data
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 Product_data data = new Product_data();

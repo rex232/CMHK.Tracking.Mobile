@@ -11,6 +11,19 @@ namespace TrackingApp.Models
         public string OrderStatus           { get; set; }
     }
 
+    public class OrderDetailModel
+    {
+        public string Picture { get; set; }
+        public string OrderType { get; set; }
+        public string OrderSupplierName { get; set; }
+        public string OrderNumber { get; set; }
+        public string OrderDate { get; set; }
+        public string OrderStatus { get; set; }
+        public int Qty { get; set; }
+        public int BoxQty { get; set; }
+    }
+
+
     public class CheckingReportModel
     {
         public string OrderNumber { get; set; }
