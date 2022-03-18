@@ -17,8 +17,15 @@
                 </Label.GestureRecognizers>
             </Label>
             <Label Grid.Row="0" Grid.Column="1" Text="查詢進貨單" FontAttributes="Bold" Padding="0,0,0,0" Style="{StaticResource LabelBig}" VerticalOptions="Center" HorizontalOptions="Center"/>
-            <Label Grid.Row="0" Grid.Column="2" Text="2單未完成" TextColor="#b4b4b4" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="15"/>
-            <SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextColor="#818181" PlaceholderColor="#818181" Placeholder="搜索" BackgroundColor="Transparent" Margin="0,10"/>
+            <Label Grid.Row="0" Grid.Column="2" TextColor="#b4b4b4" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="15">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span TextColor="#b4b4b4" Text="{Binding incompleteOrder}"  />
+                        <Span TextColor="#b4b4b4" Text=" 單未完成"  />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+            <SearchBar Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" TextColor="#818181" PlaceholderColor="#818181" Placeholder="搜索" BackgroundColor="Transparent" Margin="0,10" Text="{Binding searchKey}"/>
 
             <!-- Message list--> 
             <ListView Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" x:Name="ItemsListView" BackgroundColor="{ StaticResource ColorBackground}"

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using TrackingApp.APIService;
 using TrackingApp.Helper;
 using TrackingApp.Models;
@@ -7,36 +9,72 @@ using Xamarin.Essentials;
 
 namespace TrackingApp.ViewModels
 {
-    public class InventoryViewModel
+    public class InventoryViewModel : ObservableObject
     {
 
         public ObservableCollection<InventoryModel> inventoryList { get; set; }
+ 
+
+        private int _onhandqty;
+        public int onHandQty
+        {
+            get => _onhandqty;
+            set
+            {
+                _onhandqty = value;
+            }
+        }
+
+        private string _searchKey;
+        public string searchKey
+        {
+            get => _searchKey;
+            set
+            {
+                _searchKey = value;
+                LoadData();
+            }
+        }
+
+        
 
         public InventoryViewModel()
         {
 
-            inventoryList = new ObservableCollection<InventoryModel>();            
-            //{
-            //    new InventoryModel { Picture = "Pic7", Name = "抗疫物資1", IsOnline = true , Detail="抗疫物資1", OnHandQty = 1800, Size="80x80x80", Volumne="0.3CBM"  },
-            //    new InventoryModel { Picture = "Pic8", Name = "抗疫物資2", IsOnline = true, Detail="抗疫物資2抗疫物資1抗疫物資1抗疫物資1抗疫物資1", OnHandQty = 600, Size="100x200x100", Volumne="0.3CBM" },
-            //    new InventoryModel { Picture = "Pic7", Name = "抗疫物資3", IsOnline = true, Detail="抗疫物資3", OnHandQty = 700, Size="100x200x100", Volumne="0.3CBM"  },
-
-            //    new InventoryModel { Picture = "Pic8", Name = "抗疫物資4", IsOnline = true, Detail="抗疫物資4", OnHandQty = 1800, Size="15x15x2", Volumne="0.3CBM"  },
-
-            //    new InventoryModel { Picture = "Pic7", Name = "抗疫物資5",  IsOnline = true, Detail="抗疫物資5", OnHandQty = 200, Size="100x200x100", Volumne="0.3CBM"  },
-            //    new InventoryModel { Picture = "Pic7", Name = "抗疫物資6", IsOnline = true, Detail="抗疫物資6",OnHandQty = 1300, Size="100x200x100", Volumne="0.3CBM"  },
-
-            //};
+  
 
             //Get inventory data
+            LoadData();
+              
+        }
+
+        //Get inventory data
+        public void LoadData()
+        {
+
             MainThread.BeginInvokeOnMainThread(async () =>
             {
+                inventoryList = new ObservableCollection<InventoryModel>();
+                onHandQty = 0;
+
                 Product_data data = new Product_data();
                 ProductModel_result _rtn = await MainApiService.Instance.Inventory.Listing(data);
+                List<Product_data> _lst = new List<Product_data>();
+
 
                 if (_rtn.success)
                 {
-                    foreach (Product_data item in _rtn.data)
+                    if (!string.IsNullOrEmpty(_searchKey))
+                    {
+                        Console.WriteLine(_searchKey);
+                        _lst = _rtn.data.Where(x => x.description.ToLower().Contains(_searchKey.ToLower()) || x.product_no.ToLower().Contains(_searchKey.ToLower())).ToList();
+                    }
+                    else
+                    {
+                        _lst = _rtn.data;
+                    }
+
+                    foreach (Product_data item in _lst)
                     {
                         InventoryModel _tmp = new InventoryModel();
                         _tmp.Picture = $"{ GlobalSetting.CURRENT_BASE}{ item.image_path}";
@@ -48,15 +86,16 @@ namespace TrackingApp.ViewModels
                         _tmp.Volumne = item.weight.ToString();
 
                         inventoryList.Add(_tmp);
+                        _onhandqty += _tmp.OnHandQty;
                     }
                 }
-    
+
+                NotifyPropertyChanged(nameof(onHandQty));
+                NotifyPropertyChanged(nameof(inventoryList));
             });
 
 
-
-
-
         }
+
     }
 }

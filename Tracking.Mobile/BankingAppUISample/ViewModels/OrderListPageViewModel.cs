@@ -1,4 +1,7 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Collections.ObjectModel;
 using TrackingApp.APIService;
 using TrackingApp.Helper;
@@ -9,13 +12,34 @@ using Xamarin.Forms;
 
 namespace TrackingApp.ViewModels
 {
-    public class OrderListPageViewModel
+    public class OrderListPageViewModel : ObservableObject
     {
 
         private INavigation _navigation;
 
         public ObservableCollection<MenuModel> menuList { get; set; }
         public ObservableCollection<OrderDetailModel> orderList { get; set; }
+
+        private int _incompleteOrder = 0;
+        public int incompleteOrder
+        {
+            get => _incompleteOrder;
+            set
+            {
+                _incompleteOrder = value;
+            }
+        }
+
+        private string _searchKey;
+        public string searchKey
+        {
+            get => _searchKey;
+            set
+            {
+                _searchKey = value;
+                LoadData();
+            }
+        }
 
         public Command BackCommand { get; private set; }
 
@@ -35,18 +59,49 @@ namespace TrackingApp.ViewModels
 
             orderList = new ObservableCollection<OrderDetailModel>();
 
+            LoadData();
+             
+            BackCommand = new Command
+            (t =>
+            {
+           
+                // Navigation.Push
+                Device.BeginInvokeOnMainThread(() => {
+                    _navigation.PopModalAsync(false);
+                });
+            });
+
+
+        }
+
+        public void LoadData()
+        {
+            orderList = new ObservableCollection<OrderDetailModel>();
+
             //Get order data
             MainThread.BeginInvokeOnMainThread(async () =>
             {
                 TransactionPage_data data = new TransactionPage_data();
                 TransactionPageModel_result _rtn = await MainApiService.Instance.Transaction.Latest(data);
+                List<TransactionPage_data> _lst = new List<TransactionPage_data>();
 
                 if (_rtn.success)
                 {
                     if (_rtn.data == null)
                         return;
 
-                    foreach (TransactionPage_data item in _rtn.data)
+                    if (!string.IsNullOrEmpty(_searchKey))
+                    {
+                        Console.WriteLine(_searchKey);
+                        _lst = _rtn.data.Where(x => x.order_no.ToLower().Contains(_searchKey.ToLower())).ToList();
+                    }
+                    else
+                    {
+                        _lst = _rtn.data;
+
+                    }
+
+                    foreach (TransactionPage_data item in _lst)
                     {
                         OrderDetailModel _tmp = new OrderDetailModel();
                         // _tmp.Picture = $"{ GlobalSetting.CURRENT_BASE}{ item.image_path}";
@@ -63,21 +118,14 @@ namespace TrackingApp.ViewModels
                     }
                 }
 
+                NotifyPropertyChanged(nameof(incompleteOrder));
+                NotifyPropertyChanged(nameof(orderList));
+
             });
 
- 
-
-            BackCommand = new Command
-            (t =>
-            {
-           
-                // Navigation.Push
-                Device.BeginInvokeOnMainThread(() => {
-                    _navigation.PopModalAsync(false);
-                });
-            });
 
 
         }
+
     }
 }
