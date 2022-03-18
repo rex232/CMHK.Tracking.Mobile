@@ -83,7 +83,7 @@
                                            <ColumnDefinition Width="Auto"/>
                                            <ColumnDefinition Width="*"/>
                                        </Grid.ColumnDefinitions>
-                                       <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Picture}"  HorizontalOptions="Start" HeightRequest="36" WidthRequest="36" Margin="20,10,20,20" />
+                                       <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding Picture}"  HorizontalOptions="Start" HeightRequest="30" WidthRequest="30" Margin="20,10,20,20" />
                                        <Label Grid.Column="1" Grid.Row="0" Text="{Binding OrderNumber}" Padding="20,0,0,0" HorizontalOptions="Center" VerticalOptions="Center"  />
                                        <Label Grid.Column="1" Grid.Row="1" Text="{Binding OrderSupplierName}" Padding="20,0,0,0" HorizontalOptions="Start" VerticalOptions="Start" TextColor="{ StaticResource ColorPrimary }" FontAttributes="Bold"/>
                                        <Label Grid.Column="2" Grid.Row="0" Text="{Binding OrderDate}" HorizontalOptions="End"/>

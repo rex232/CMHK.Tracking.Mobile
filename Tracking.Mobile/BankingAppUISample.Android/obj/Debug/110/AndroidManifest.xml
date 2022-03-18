@@ -10,7 +10,7 @@
   <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
   <uses-permission android:name="android.permission.INTERNET" />
-  <application android:label="TrackingApp.Droid" android:icon="@mipmap/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true" android:extractNativeLibs="true">
+  <application android:label="招商船企" android:icon="@mipmap/icon" android:name="android.app.Application" android:allowBackup="true" android:debuggable="true" android:extractNativeLibs="true">
     <activity android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="招商船企" android:theme="@style/MainTheme" android:name="crc64f7ca98cbfe846d72.MainActivity" />
     <activity android:icon="@mipmap/icon" android:label="招商船企" android:noHistory="true" android:theme="@style/MainTheme.Splash" android:name="crc64f7ca98cbfe846d72.SplashActivity" android:exported="true">
       <intent-filter>

@@ -12,8 +12,8 @@
     <ScrollView VerticalScrollBarVisibility="Never">
         <Grid RowDefinitions="Auto,Auto,Auto,*" BackgroundColor="{ StaticResource ColorBackground}">
             <!-- 1. Main structure-->
-            <StackLayout Grid.Row="0"  HeightRequest="160" BackgroundColor="{ StaticResource ColorPrimary}">
-                <Image Grid.Row="0" Source="logo.png" VerticalOptions="Start" Aspect="AspectFill" Margin="0,30,0,0"/>
+            <StackLayout Grid.Row="0"  HeightRequest="250" BackgroundColor="{ StaticResource ColorPrimary}">
+                <Image Grid.Row="0" Source="sinotrans_logo.png" VerticalOptions="Start" Aspect="AspectFit" HeightRequest="170" Margin="0,30,0,0"/>
             </StackLayout>
             
             <!-- 1.1 Heart -->

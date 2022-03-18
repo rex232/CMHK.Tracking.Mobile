@@ -63,7 +63,7 @@ namespace TrackingApp.ViewModels
                         OrderDetailModel _tmp = new OrderDetailModel();
                        // _tmp.Picture = $"{ GlobalSetting.CURRENT_BASE}{ item.image_path}";
                         _tmp.OrderType = item.order_type;
-                        _tmp.OrderSupplierName = item.supplier_id;
+                        _tmp.OrderSupplierName = "招商暖邨";
                       //  _tmp.OrderInfo = item.description;
                         _tmp.OrderNumber = item.order_no;
                         _tmp.OrderDate = item.working_date;

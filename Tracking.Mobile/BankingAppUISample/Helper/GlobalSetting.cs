@@ -12,7 +12,7 @@ namespace TrackingApp.Helper
 
         public static string CURRENT_UAT = "REVIEW";
         public static string CURRENT_API = "http://118.140.16.68:8080/tracking/api";
-        public static string CURRENT_BASE = "http://118.140.16.68:8080/tracking";
+        public static string CURRENT_BASE = "http://118.140.16.68:8080/tracking/";
 
         public static string CURRENT_DATE_FORMAT = "yyyy-MM-dd";
         public static string CURRENT_TIME_FORMAT = "HH:mm";

@@ -15,7 +15,7 @@
       <action android:name="android.media.browse.MediaBrowserService" />
     </intent>
   </queries>
-  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="TrackingApp.Droid">
+  <application android:name="android.app.Application" android:allowBackup="true" android:appComponentFactory="androidx.core.app.CoreComponentFactory" android:debuggable="true" android:extractNativeLibs="true" android:icon="@mipmap/icon" android:label="招商船企">
     <activity android:name="crc64f7ca98cbfe846d72.MainActivity" android:configChanges="orientation|screenSize" android:icon="@mipmap/icon" android:label="招商船企" android:theme="@style/MainTheme" />
     <activity android:name="crc64f7ca98cbfe846d72.SplashActivity" android:exported="true" android:icon="@mipmap/icon" android:label="招商船企" android:noHistory="true" android:theme="@style/MainTheme.Splash">
       <intent-filter>
