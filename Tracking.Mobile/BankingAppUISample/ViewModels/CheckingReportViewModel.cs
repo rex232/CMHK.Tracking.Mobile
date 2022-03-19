@@ -7,7 +7,7 @@ using Xamarin.Forms;
 
 namespace TrackingApp.ViewModels
 {
-    public class CheckingReportViewModel
+    public class CheckingReportViewModel : ObservableObject
     {
 
         private INavigation _navigation;

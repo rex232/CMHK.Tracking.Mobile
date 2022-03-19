@@ -3,12 +3,18 @@
 	<item>
 		<color android:color="@color/launcher_background"/>
 	</item>
-	<item>
+	<item
+        android:bottom="7dp"
+        android:left="90dp"
+        android:right="90dp"
+        android:top="7dp">
 		<bitmap
 			android:gravity="center"
 			android:src="@drawable/sinotrans_logo_sm2"/>
 	</item>
-	<item android:bottom="50dp">
+	<item android:bottom="50dp"         
+		  android:left="20dp"
+          android:right="20dp">
 		// setting the image from bottom
 		<bitmap
             android:gravity="bottom"

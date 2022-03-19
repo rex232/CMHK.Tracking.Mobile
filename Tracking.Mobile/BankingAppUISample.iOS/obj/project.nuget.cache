@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "VLgBqBgKTUiutP6FhnLI07YyFgVFBGy6eK14bwtWmLf1rzAHtIGPm0chn86tpr/zftR7upWKely5h7HAgKESXw==",
+  "dgSpecHash": "S2CT/GxV21RUxh0AhGOU08rAqb1HAZDbx01CVVXuEgPXbwLX9LSwZIoNBuhCjjJbAOLisrUXOYmwLegeFc96wQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CMHK.Tracking.Mobile\\Tracking.Mobile\\BankingAppUISample.iOS\\TrackingApp.iOS.csproj",
   "expectedPackageFiles": [
@@ -9,6 +9,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\polly\\7.2.3\\polly.7.2.3.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\webp.touch\\1.0.8\\webp.touch.1.0.8.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.1\\xamarin.communitytoolkit.2.0.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.ffimageloading\\2.4.11.982\\xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.11.982\\xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",

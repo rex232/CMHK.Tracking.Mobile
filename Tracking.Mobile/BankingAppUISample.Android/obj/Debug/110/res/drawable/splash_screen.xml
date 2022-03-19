@@ -1,3 +1,3 @@
-<layer-list xmlns:android="http://schemas.android.com/apk/res/android"><item><color android:color="@color/launcher_background" /></item><item><bitmap android:gravity="center" android:src="@drawable/sinotrans_logo_sm2" /></item><item android:bottom="50dp">
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android"><item><color android:color="@color/launcher_background" /></item><item android:bottom="7dp" android:left="90dp" android:right="90dp" android:top="7dp"><bitmap android:gravity="center" android:src="@drawable/sinotrans_logo_sm2" /></item><item android:bottom="50dp" android:left="20dp" android:right="20dp">
 		// setting the image from bottom
 		<bitmap android:gravity="bottom" android:src="@drawable/logo_sm" /></item></layer-list>

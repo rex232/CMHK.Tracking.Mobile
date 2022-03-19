@@ -4,10 +4,11 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"  
              xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
              ios:Page.PrefersStatusBarHidden="True"
              ios:Page.PreferredStatusBarUpdateAnimation="Fade"
-            x:Class="TrackingApp.Views.SettingPage">
+             x:Class="TrackingApp.Views.SettingPage">
 
     <ScrollView VerticalScrollBarVisibility="Never">
         <Grid RowDefinitions="Auto,Auto,Auto,*" BackgroundColor="{ StaticResource ColorBackground}">
@@ -26,15 +27,33 @@
                 <Grid ColumnDefinitions="*,*,*" RowDefinitions="Auto">
                     <StackLayout Grid.Row="0" Grid.Column="0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
                         <Image HorizontalOptions="Start" Source="user.png" Margin="0,0,0,0" HeightRequest="24" WidthRequest="24" />
-                        <Label Text="用戶" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                        <Label Text="{x:Static Resource:AppResources.SettingUser}" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.UserInfoCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                     <StackLayout Grid.Row="0" Grid.Column="1" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
                         <Image HorizontalOptions="Center" Source="cloud_black_upload2.png" Margin="0,0,0,0" HeightRequest="24" WidthRequest="24" />
-                        <Label  Text="資料同步" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                        <Label  Text="{x:Static Resource:AppResources.SettingSync}" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.DataSyncCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                     <StackLayout Grid.Row="0" Grid.Column="2" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="Center">
                         <Image HorizontalOptions="Start" Source="settings8.png" Margin="0,0,0,0" HeightRequest="24" WidthRequest="24" />
-                        <Label Text="設定" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                        <Label Text="{x:Static Resource:AppResources.Setting}" TextColor="#a4a5b0" Padding="0,0,0,0" VerticalOptions="Center" Style="{StaticResource LabelSmall}" />
+                        <StackLayout.GestureRecognizers>
+                            <TapGestureRecognizer
+                            Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.SettingCommand}"
+                            CommandParameter="{Binding}"
+                            NumberOfTapsRequired="1" />
+                        </StackLayout.GestureRecognizers>
                     </StackLayout>
                 </Grid>
             </Frame>
@@ -67,7 +86,7 @@
                                     <Label Grid.Row="0" Grid.Column="2" Text=">" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"  LineBreakMode="NoWrap" FontSize="20" Padding="0,0,0,0" >
                                     </Label> 
                                     <Grid.GestureRecognizers>
-                                        <TapGestureRecognizer Command="{Binding .}" CommandParameter="{Binding .}"
+                                    <TapGestureRecognizer  Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.MenuCommand}" CommandParameter="{Binding .}"
                                               NumberOfTapsRequired="1" />
                                     </Grid.GestureRecognizers>
                             </Grid>

@@ -24,6 +24,12 @@ namespace TrackingApp.ViewModels
             bool hasSessionLogin = Preferences.ContainsKey("session_login");
             if (hasSessionLogin)
                 _loginname = Preferences.Get("session_login", "");
+
+#if DEBUG
+            bool hasSessionPassword = Preferences.ContainsKey("session_password");
+            if (hasSessionPassword) 
+                _password = Preferences.Get("session_password", "");
+#endif
         }
 
         private string _loginname;
@@ -74,6 +80,8 @@ namespace TrackingApp.ViewModels
                 if (_loginname.ToLower() == "admin")
                 {
                     Preferences.Set("session_login", _loginname);
+
+
                     GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
                     GlobalVariable.Access_level = 3;
                 }
@@ -91,6 +99,10 @@ namespace TrackingApp.ViewModels
                     GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
                     GlobalVariable.Access_level = 1;
                 }
+
+#if DEBUG
+                Preferences.Set("session_password", _password);
+#endif
 
                 //Close Form
                 await _navigation.PopModalAsync();

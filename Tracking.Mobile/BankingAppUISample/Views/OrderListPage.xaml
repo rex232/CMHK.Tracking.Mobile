@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:system="clr-namespace:System;assembly=netstandard"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"  
              x:Class="TrackingApp.Views.OrderListPage">
     <ContentPage.Content>
         <!-- Main layout-->
@@ -16,11 +17,11 @@
                             NumberOfTapsRequired="1" />
                 </Label.GestureRecognizers>
             </Label>
-            <Label Grid.Row="0" Grid.Column="1" Text="查詢貨單" FontAttributes="Bold" Padding="0,0,0,0" Style="{StaticResource LabelBig}" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="{x:Static Resource:AppResources.Order}" FontAttributes="Bold" Padding="0,0,0,0" Style="{StaticResource LabelBig}" VerticalOptions="Center" HorizontalOptions="Center"/>
             <Label Grid.Row="0" Grid.Column="2" TextColor="#b4b4b4" VerticalTextAlignment="Center" FontAttributes="Bold" HorizontalTextAlignment="End" FontSize="15">
                 <Label.FormattedText>
                     <FormattedString>
-                        <Span TextColor="#b4b4b4" Text="{Binding incompleteOrder}"  />
+                        <Span TextColor="#b4b4b4" Text="{x:Static Resource:AppResources.OrderLabel}"  />
                         <Span TextColor="#b4b4b4" Text=" 單未完成"  />
                     </FormattedString>
                 </Label.FormattedText>

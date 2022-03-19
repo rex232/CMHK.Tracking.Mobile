@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrackingApp.Views.LoginPage"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"  
              NavigationPage.HasNavigationBar="False">
 
 <ContentPage.Content>
@@ -39,14 +40,14 @@
 
 
                     <!-- 4. Cards-->
-                    <Label Grid.Row="0" Grid.Column="0" Text="員工登錄" TextColor="Silver" Margin="0,0,0,0"/>
+                    <Label Grid.Row="0" Grid.Column="0" Text="{x:Static Resource:AppResources.UserLogin}" TextColor="Silver" Margin="0,0,0,0" Style="{StaticResource LabelBig}"/>
  
 
                     <Entry  
                             Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
                             Margin="20,40,20,0" 
                             HeightRequest="50" 
-                            Placeholder="員工編號"
+                            Placeholder="{x:Static Resource:AppResources.UserAccount}"
                             MaxLength="10"
                             Keyboard="Text"
                             ReturnType="Next"
@@ -57,7 +58,7 @@
                     <Entry Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
                            Margin="20,0,20,0" 
                            HeightRequest="50" IsPassword="true"
-                           Placeholder="密碼"
+                           Placeholder="{x:Static Resource:AppResources.UserPassword}"
                            MaxLength="10"
                            Keyboard="Text" 
                            ReturnType="Done"
@@ -68,7 +69,7 @@
                     <Button Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
                             Margin="20,0,20,0" 
                             HeightRequest="60"  
-                            Text="登入"  
+                            Text="{x:Static Resource:AppResources.ButtonLogin}"  
                             HorizontalOptions="FillAndExpand"
                             Command="{Binding loginCommand}" />
 

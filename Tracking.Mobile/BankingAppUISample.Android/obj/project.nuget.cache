@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "RTuX949GvudUcLuZjMm/SXlClz/U9kVfHr6gDasR9pyP/8hOcQGtP0DbYe69Rrte/kgJpf88Blmd1OV6iOC5zQ==",
+  "dgSpecHash": "7K7avfq+uibgl5DPjWF7tDnK1i+yMKGJnUsZULhrXTvNpa0peb+VvBod37qyRLdHpPnEskSxcTTn6oKKfbwWBA==",
   "success": true,
   "projectFilePath": "C:\\Users\\ASUS\\source\\repos\\CMHK.Tracking.Mobile\\Tracking.Mobile\\BankingAppUISample.Android\\TrackingApp.Android.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.androidx.versionedparcelable\\1.1.1.8\\xamarin.androidx.versionedparcelable.1.1.1.8.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.androidx.viewpager\\1.0.0.8\\xamarin.androidx.viewpager.1.0.0.8.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.androidx.viewpager2\\1.0.0.10\\xamarin.androidx.viewpager2.1.0.0.10.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.communitytoolkit\\2.0.1\\xamarin.communitytoolkit.2.0.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.essentials\\1.7.1\\xamarin.essentials.1.7.1.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.ffimageloading\\2.4.11.982\\xamarin.ffimageloading.2.4.11.982.nupkg.sha512",
     "C:\\Users\\ASUS\\.nuget\\packages\\xamarin.ffimageloading.forms\\2.4.11.982\\xamarin.ffimageloading.forms.2.4.11.982.nupkg.sha512",

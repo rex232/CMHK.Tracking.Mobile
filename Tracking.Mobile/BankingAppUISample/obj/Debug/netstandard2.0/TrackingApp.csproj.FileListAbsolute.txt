@@ -16,7 +16,11 @@ C:\Users\CMLHKREX\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUI
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\bin\Debug\netstandard2.0\TrackingApp.deps.json
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\bin\Debug\netstandard2.0\TrackingApp.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\bin\Debug\netstandard2.0\TrackingApp.pdb
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\bin\Debug\netstandard2.0\zh-Hans\TrackingApp.resources.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.csproj.AssemblyReference.cache
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.Resx.AppResources.resources
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.Resx.AppResources.zh-Hans.resources
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.csproj.GenerateResource.cache
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Controls\QAToastView.xaml.g.cs
@@ -32,10 +36,12 @@ C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISamp
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Views\StockInOrderListPage.xaml.g.cs
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Views\StockInPage.xaml.g.cs
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Views\StockOutOrderListPage.xaml.g.cs
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\Views\UserInfoPage.xaml.g.cs
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.AssemblyInfoInputs.cache
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.AssemblyInfo.cs
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.csproj.CoreCompileInputs.cache
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\zh-Hans\TrackingApp.resources.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\refint\TrackingApp.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample\obj\Debug\netstandard2.0\TrackingApp.pdb

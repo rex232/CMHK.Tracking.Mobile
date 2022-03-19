@@ -5,6 +5,10 @@ using TrackingApp.Helper;
 using TrackingApp.Models;
 using Xamarin.Essentials;
 using System.Linq;
+using Xamarin.CommunityToolkit.Helpers;
+using System.Globalization;
+using TrackingApp.Resx;
+using System.Threading;
 
 namespace TrackingApp.ViewModels
 {
@@ -15,6 +19,8 @@ namespace TrackingApp.ViewModels
 
         public LandingViewModel()
         {
+
+
             cards = new ObservableCollection<Cards>
             {
                 new Cards
