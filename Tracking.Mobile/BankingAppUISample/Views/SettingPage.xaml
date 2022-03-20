@@ -86,7 +86,7 @@
                                     <Label Grid.Row="0" Grid.Column="2" Text=">" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"  LineBreakMode="NoWrap" FontSize="20" Padding="0,0,0,0" >
                                     </Label> 
                                     <Grid.GestureRecognizers>
-                                    <TapGestureRecognizer  Command="{Binding Source={x:RelativeSource AncestorType={x:Type ContentPage}},Path=BindingContext.MenuCommand}" CommandParameter="{Binding .}"
+                                    <TapGestureRecognizer Command="{ Binding BindingContext.MenuCommand, Source={x:Reference Name=ItemsListView} }"  CommandParameter="{Binding .}"
                                               NumberOfTapsRequired="1" />
                                     </Grid.GestureRecognizers>
                             </Grid>

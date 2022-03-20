@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<local:AwaitableContentPage
+             xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"  
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.PrefersStatusBarHidden="True"
+             ios:Page.PreferredStatusBarUpdateAnimation="Fade"
+             xmlns:local="clr-namespace:TrackingApp.Views;assembly=TrackingApp"
+             xmlns:models="clr-namespace:TrackingApp.Models"
+             x:TypeArguments="models:MenuModel"
+             x:Class="TrackingApp.Views.SelectionPage">
+
+    <ScrollView VerticalScrollBarVisibility="Never">
+        <Grid RowDefinitions="Auto,Auto,Auto,*" BackgroundColor="{ StaticResource ColorBackground}">
+  
+
+            <ListView Grid.Row="2"  x:Name="ItemsListView" BackgroundColor="{ StaticResource ColorBackground}"
+                              CachingStrategy="RecycleElement"
+                              IsPullToRefreshEnabled="false"
+                              ItemsSource="{Binding menuList}"
+                              SelectionMode="None"
+                              ItemTapped="OnItemTapped" >
+ 
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Grid HeightRequest="120" MinimumHeightRequest="120" Margin="2">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*" />
+                                    <ColumnDefinition Width="6*" />
+                                    <ColumnDefinition Width="1*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Image Grid.Row="0" Grid.Column="0" Source="{Binding Picture}"
+                                            BackgroundColor="Transparent" Style="{StaticResource ImageIcon}" HorizontalOptions="StartAndExpand" VerticalOptions="Center" Margin="10,0,0,0">
+                                </Image>
+                                <Label Grid.Row="0" Grid.Column="1" Text="{Binding MenuName}" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"
+                                            LineBreakMode="NoWrap" Style="{StaticResource LabelSmall}" >
+                                </Label>
+                                <Label Grid.Row="0" Grid.Column="2" Text=">" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" VerticalOptions="FillAndExpand"  LineBreakMode="NoWrap" FontSize="20" Padding="0,0,0,0" >
+                                </Label> 
+     
+                            </Grid>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+
+        </Grid>
+    </ScrollView>
+</local:AwaitableContentPage>

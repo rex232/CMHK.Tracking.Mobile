@@ -15,8 +15,8 @@ namespace TrackingApp.Views
         public SettingPage()
         {
             InitializeComponent();
-            NavigationPage.SetHasNavigationBar(this, false);
-            BindingContext = new SettingViewModel();
+            NavigationPage.SetHasNavigationBar(this, false); 
+            BindingContext = new SettingViewModel(this.Navigation);
         }
     }
 }

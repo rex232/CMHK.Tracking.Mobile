@@ -1,3 +1,4 @@
+C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\mscorlib.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\bin\Debug\TrackingApp.Droid.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\bin\Debug\TrackingApp.Droid.pdb
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\bin\Debug\com.cmhk.tracking.apk
@@ -141,7 +142,6 @@ C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISamp
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\Mono.Android.pdb
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\Mono.Security.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\Mono.Security.pdb
-C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\mscorlib.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\mscorlib.pdb
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\netstandard.dll
 C:\Users\ASUS\source\repos\CMHK.Tracking.Mobile\Tracking.Mobile\BankingAppUISample.Android\obj\Debug\110\android\assets\Newtonsoft.Json.dll

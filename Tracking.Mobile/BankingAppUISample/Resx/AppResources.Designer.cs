@@ -61,11 +61,83 @@ namespace TrackingApp.Resx {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to 創建報告.
+        /// </summary>
+        public static string ButtonCreateReport {
+            get {
+                return ResourceManager.GetString("ButtonCreateReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to 登入.
         /// </summary>
         public static string ButtonLogin {
             get {
                 return ResourceManager.GetString("ButtonLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 更新.
+        /// </summary>
+        public static string ButtonUpdate {
+            get {
+                return ResourceManager.GetString("ButtonUpdate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 新增檢驗報表.
+        /// </summary>
+        public static string CheckReportCreate {
+            get {
+                return ResourceManager.GetString("CheckReportCreate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 日期.
+        /// </summary>
+        public static string CheckReportDate {
+            get {
+                return ResourceManager.GetString("CheckReportDate", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 司機名稱.
+        /// </summary>
+        public static string CheckReportDriver {
+            get {
+                return ResourceManager.GetString("CheckReportDriver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 供應商.
+        /// </summary>
+        public static string CheckReportSupplier {
+            get {
+                return ResourceManager.GetString("CheckReportSupplier", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 檢查報告.
+        /// </summary>
+        public static string CheckReportTitle {
+            get {
+                return ResourceManager.GetString("CheckReportTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 貨車.
+        /// </summary>
+        public static string CheckReportTruckNo {
+            get {
+                return ResourceManager.GetString("CheckReportTruckNo", resourceCulture);
             }
         }
         
@@ -111,6 +183,78 @@ namespace TrackingApp.Resx {
         public static string InventoryVolumne {
             get {
                 return ResourceManager.GetString("InventoryVolumne", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 繁體.
+        /// </summary>
+        public static string LanguageChinese {
+            get {
+                return ResourceManager.GetString("LanguageChinese", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 簡體.
+        /// </summary>
+        public static string LanguageChineseGB {
+            get {
+                return ResourceManager.GetString("LanguageChineseGB", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 檢驗.
+        /// </summary>
+        public static string menuCheckReport {
+            get {
+                return ResourceManager.GetString("menuCheckReport", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 首頁.
+        /// </summary>
+        public static string menuHome {
+            get {
+                return ResourceManager.GetString("menuHome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 庫存.
+        /// </summary>
+        public static string menuInventory {
+            get {
+                return ResourceManager.GetString("menuInventory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 操作.
+        /// </summary>
+        public static string menuOperation {
+            get {
+                return ResourceManager.GetString("menuOperation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 我的.
+        /// </summary>
+        public static string menuUserInfo {
+            get {
+                return ResourceManager.GetString("menuUserInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 此設定需要重新啟動.
+        /// </summary>
+        public static string messageChangeLanguage {
+            get {
+                return ResourceManager.GetString("messageChangeLanguage", resourceCulture);
             }
         }
         
@@ -223,7 +367,7 @@ namespace TrackingApp.Resx {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to 用戶.
+        ///   Looks up a localized string similar to 用户.
         /// </summary>
         public static string SettingUser {
             get {
@@ -300,6 +444,15 @@ namespace TrackingApp.Resx {
         public static string UserPassword {
             get {
                 return ResourceManager.GetString("UserPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to 用户資料.
+        /// </summary>
+        public static string UserTitle {
+            get {
+                return ResourceManager.GetString("UserTitle", resourceCulture);
             }
         }
     }

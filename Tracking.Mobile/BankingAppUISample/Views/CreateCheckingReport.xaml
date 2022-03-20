@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="TrackingApp.Views.CreateCheckingReport"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"    
              BackgroundColor="{ StaticResource ColorBackground}">
     <ContentPage.Content>
         <!-- Main layout-->
@@ -16,7 +17,7 @@
                             NumberOfTapsRequired="1" />
                 </Label.GestureRecognizers>
             </Label>
-            <Label Grid.Row="0" Grid.Column="1" Text="新增檢驗報表" FontAttributes="Bold" Padding="-30,0,0,0" Style="{StaticResource LabelBig}" VerticalOptions="Center" HorizontalOptions="Center"/>
+            <Label Grid.Row="0" Grid.Column="1" Text="{x:Static Resource:AppResources.CheckReportCreate}"  FontAttributes="Bold" Padding="-30,0,0,0" Style="{StaticResource LabelBig}" VerticalOptions="Center" HorizontalOptions="Center"/>
             
             <ScrollView Grid.Row="1" Grid.ColumnSpan="2" VerticalScrollBarVisibility="Never">
                 <Grid RowDefinitions="Auto,Auto,Auto,*" BackgroundColor="{ StaticResource ColorBackground}">
@@ -100,7 +101,7 @@
             </ScrollView>
             <StackLayout Grid.Row="2" Grid.ColumnSpan="2" BackgroundColor="White" Orientation="Horizontal">
 
-                <Button HorizontalOptions="End" Text="创建报告"></Button>
+                <Button HorizontalOptions="End" Text="{x:Static Resource:AppResources.ButtonCreateReport}"></Button>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

@@ -2,12 +2,13 @@
 using System.Collections.ObjectModel;
 using TrackingApp.Helper;
 using TrackingApp.Models;
+using TrackingApp.Resx;
 using TrackingApp.Views;
 using Xamarin.Forms;
 
 namespace TrackingApp.ViewModels
 {
-    public class CreateCheckingReportViewModel
+    public class CreateCheckingReportViewModel : ObservableObject
     {
 
         private INavigation _navigation;
@@ -17,9 +18,9 @@ namespace TrackingApp.ViewModels
 
         public Command BackCommand { get; private set; }
 
-        public CreateCheckingReportViewModel(INavigation navitation)
+        public CreateCheckingReportViewModel(INavigation navigation)
         {
-            _navigation = navitation;
+            _navigation = navigation;
 
             checkReportList = new ObservableCollection<CheckingReportModel>()
             {
@@ -33,10 +34,10 @@ namespace TrackingApp.ViewModels
 
             menuList = new ObservableCollection<MenuModel>()
             {
-                new MenuModel { Picture = "window", MenuName = "日期", MenuData= DateTime.Now.ToShortDateString() },
-                new MenuModel { Picture = "window", MenuName = "供應商" },
-                new MenuModel { Picture = "window", MenuName = "貨車" },
-                new MenuModel { Picture = "window", MenuName = "司機名稱" }
+                new MenuModel { Picture = "window", MenuName = AppResources.CheckReportDate, MenuData= DateTime.Now.ToShortDateString() },
+                new MenuModel { Picture = "window", MenuName = AppResources.CheckReportSupplier },
+                new MenuModel { Picture = "window", MenuName = AppResources.CheckReportTruckNo },
+                new MenuModel { Picture = "window", MenuName = AppResources.CheckReportDriver }
             };
 
 

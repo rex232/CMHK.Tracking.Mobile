@@ -17,7 +17,7 @@ namespace TrackingApp.Views
             InitializeComponent();
             NavigationPage.SetHasNavigationBar(this, false);
 
-            BindingContext = new CreateCheckingReportViewModel(this.Navigation);
+            BindingContext = new UserInfoViewModel(this.Navigation);
         }
     }
 }

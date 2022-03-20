@@ -198,4 +198,55 @@
   <data name="SettingChangeLanguage" xml:space="preserve">
     <value>语言</value>
   </data>
+  <data name="CheckReportTruckNo" xml:space="preserve">
+    <value>货车</value>
+  </data>
+  <data name="CheckReportTitle" xml:space="preserve">
+    <value>检查报告</value>
+  </data>
+  <data name="CheckReportSupplier" xml:space="preserve">
+    <value>供应商</value>
+  </data>
+  <data name="CheckReportDriver" xml:space="preserve">
+    <value>司机名称</value>
+  </data>
+  <data name="CheckReportDate" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="CheckReportCreate" xml:space="preserve">
+    <value>新增检验报表</value>
+  </data>
+  <data name="ButtonCreateReport" xml:space="preserve">
+    <value>创建报告</value>
+  </data>
+  <data name="UserTitle" xml:space="preserve">
+    <value>用户资料</value>
+  </data>
+  <data name="ButtonUpdate" xml:space="preserve">
+    <value>更新</value>
+  </data>
+  <data name="LanguageChineseGB" xml:space="preserve">
+    <value>簡體</value>
+  </data>
+  <data name="LanguageChinese" xml:space="preserve">
+    <value>繁體</value>
+  </data>
+  <data name="menuCheckReport" xml:space="preserve">
+    <value>检验</value>
+  </data>
+  <data name="menuHome" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="menuUserInfo" xml:space="preserve">
+    <value>我的</value>
+  </data>
+  <data name="menuOperation" xml:space="preserve">
+    <value>操作</value>
+  </data>
+  <data name="menuInventory" xml:space="preserve">
+    <value>库存</value>
+  </data>
+  <data name="messageChangeLanguage" xml:space="preserve">
+    <value>此设定需要重新启动</value>
+  </data>
 </root>

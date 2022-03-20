@@ -12,7 +12,7 @@ using System.Threading;
 
 namespace TrackingApp.ViewModels
 {
-    public class LandingViewModel
+    public class LandingViewModel : ObservableObject
     {
         public ObservableCollection<Cards> cards { get; set; }
         public ObservableCollection<OrderDetailModel> orderList { get; set; }

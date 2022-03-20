@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:converters="clr-namespace:TrackingApp.Convertor"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"     
              x:Class="TrackingApp.Views.CheckReportPage">
     <ContentPage.Resources>
         <ResourceDictionary> 
@@ -13,7 +14,7 @@
         <Grid RowDefinitions="Auto,Auto,Auto,*" ColumnDefinitions="*,*" Padding="10,10,10,0">
 
             <!-- Main Label and message indicator:-->
-            <Label Grid.Row="0" Grid.Column="0" Text="檢查報告" FontAttributes="Bold" Margin="10,0,0,0" Style="{StaticResource LabelHuge}"/>
+            <Label Grid.Row="0" Grid.Column="0" Text="{x:Static Resource:AppResources.CheckReportTitle}" FontAttributes="Bold" Margin="10,0,0,0" Style="{StaticResource LabelHuge}"/>
             <Image Grid.Row="0" Grid.Column="1" HorizontalOptions="End" Source="add.png" Margin="13,0,10,0" HeightRequest="24" WidthRequest="24">
                 <Image.GestureRecognizers>
                     <TapGestureRecognizer

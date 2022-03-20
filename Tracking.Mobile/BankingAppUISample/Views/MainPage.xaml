@@ -3,31 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:TrackingApp.Views;assembly=TrackingApp"
              xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+             xmlns:Resource="clr-namespace:TrackingApp.Resx"  
              android:TabbedPage.ToolbarPlacement="Bottom" 
              BackgroundColor="White"
              x:Class="TrackingApp.Views.MainPage">
     <TabbedPage.Children>
-        <NavigationPage x:Name="Home" Title="首頁" Icon="home.png">
+        <NavigationPage x:Name="Home" Title="{x:Static Resource:AppResources.menuHome}" Icon="home.png">
             <x:Arguments>
                 <local:LandingPage />
             </x:Arguments>
         </NavigationPage >
-        <NavigationPage  x:Name="Inventory" Title="庫存" Icon="monitor4.png">
+        <NavigationPage  x:Name="Inventory" Title="{x:Static Resource:AppResources.menuInventory}" Icon="monitor4.png">
             <x:Arguments>
                 <local:InventoryPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage x:Name="Operation" Title="操作" Icon="loop.png">
+        <NavigationPage x:Name="Operation" Title="{x:Static Resource:AppResources.menuOperation}" Icon="loop.png">
             <x:Arguments>
                 <local:OperationPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage x:Name="Test" Title="檢驗" Icon="doc_list.png">
+        <NavigationPage x:Name="Test" Title="{x:Static Resource:AppResources.menuCheckReport}" Icon="doc_list.png">
             <x:Arguments>
                 <local:CheckReportPage />
             </x:Arguments>
         </NavigationPage>
-        <NavigationPage x:Name="User" Title="我的" Icon="user.png">
+        <NavigationPage x:Name="User" Title="{x:Static Resource:AppResources.menuUserInfo}" Icon="user.png">
             <x:Arguments>
                 <local:SettingPage />
             </x:Arguments>

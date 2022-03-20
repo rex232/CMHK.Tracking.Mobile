@@ -81,7 +81,7 @@ namespace TrackingApp.ViewModels
                 {
                     Preferences.Set("session_login", _loginname);
 
-
+                    GlobalVariable.Access_user = _loginname.ToLower();
                     GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
                     GlobalVariable.Access_level = 3;
                 }
@@ -89,6 +89,7 @@ namespace TrackingApp.ViewModels
                 if (_loginname.ToLower() == "staff01")
                 {
                     Preferences.Set("session_login", _loginname);
+                    GlobalVariable.Access_user = _loginname.ToLower();
                     GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
                     GlobalVariable.Access_level = 2;
                 }
@@ -96,6 +97,7 @@ namespace TrackingApp.ViewModels
                 if (_loginname.ToLower() == "client")
                 {
                     Preferences.Set("session_login", _loginname.ToLower());
+                    GlobalVariable.Access_user = _loginname.ToLower();
                     GlobalVariable.Access_token = $"{ _loginname }{ DateTime.Now.ToString("ddMMyyyy") }";
                     GlobalVariable.Access_level = 1;
                 }
